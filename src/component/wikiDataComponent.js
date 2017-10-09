@@ -63,9 +63,9 @@ class WikiDataComponent extends React.Component {
                     })
             } 
         } else if (this.state.data.errorData){
-            responseData = <li>not foundd</li>
+            responseData = <div>not foundd</div>
         }else if (this.state.data.wikiNoData){
-            responseData = <li>Please enter valid search string wiki do not have related data</li>
+            responseData = <div>Please enter valid search string wiki do not have related data</div>
         }
 
         return(
@@ -73,9 +73,9 @@ class WikiDataComponent extends React.Component {
                 <h1>Enter string for wiki search</h1>
                 <input type="text" maxLength="20" value={this.state.wikiSearch} onChange={this.getWikiSearchInput} onKeyUp={this.disableButton}/>
                 <button disabled={this.state.flag} onClick={this.getWikiSearchData}>get wiki</button>
-                <ul>
+                <div>
                     {responseData}
-                </ul>
+                </div>
             </div>
         )
     }
